@@ -22,7 +22,7 @@
 
 **调整孩子性别、年龄等特征的示意动画：**
 
-![](https://rsrc.hyper.ai/2021/05/gc73i8wb.gif)
+![](https://rsrc.hyper.ai/2021/05/7xtnqj07.gif)
 
 #### 安装环境：
 - Python：3.6
