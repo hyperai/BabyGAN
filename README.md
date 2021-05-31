@@ -1,55 +1,40 @@
-# BabyGAN
+# 用 BabyGAN 预测孩子长相
 
-![logo](https://raw.githubusercontent.com/tg-bomze/BabyGAN/master/media/logo.png)
 
-**Check how it works online:**
-- Russian Language [![Colab](https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(RUS).ipynb)
-- English Language [![Colab](https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/github/tg-bomze/BabyGAN/blob/master/BabyGAN_(ENG).ipynb)
+**BabyGAN** 是一个基于 StyleGAN 的儿童长相预测器，可以基于给定的父母双方图像，预测孩子的长相。  
 
-<p>
-StyleGAN-based predictor of children's faces from photographs of theoretical parents. The latent representation is extracted from the input images, after which the algorithm mixes them in certain proportions. The neural network model is based on the GAN architecture. Using latency direction, you can change various parameters: age, face position, emotions and gender.
-</p>  
+**主要预测方法为：** 使用基于 GAN 架构的神经网络模型，从输入的父母图像中提取 latent representation，然后用算法将其按一定比例混合，生成孩子图像。  
 
-**Based on:** [StyleGAN](https://github.com/NVlabs/stylegan)
+利用 latency direction，可以改变年龄、面部朝向、情绪及性别等参数。  
 
-**Encoder:** [StyleGAN-Encoder](https://github.com/pbaylies/stylegan-encoder)
+- **GitHub 仓库: [BabyGAN](https://github.com/tg-bomze/BabyGAN)**(*创建者: [Denis Malimonov](https://github.com/tg-bomze)*)  
 
-![example1](https://raw.githubusercontent.com/tg-bomze/BabyGAN/master/media/example1.JPG)
-![example2](https://raw.githubusercontent.com/tg-bomze/BabyGAN/master/media/example2.JPG)
-![example3](https://raw.githubusercontent.com/tg-bomze/BabyGAN/master/media/example3.JPG)
+- **神经网络: [StyleGAN](https://github.com/NVlabs/stylegan)** (*创建者: [Tero Karras](https://research.nvidia.com/person/tero-karras), [Samuli Laine](https://research.nvidia.com/person/samuli-laine), [Timo Aila](https://research.nvidia.com/person/timo-aila)*)
 
-## Pre-train Models and dictionaries
-Follow the [LINK](https://drive.google.com/drive/folders/1xwqqG0HkLe2AiXxjC-XK8OfvMKT1jBlp) and add shortcut to Drive:
+- **编码器: [stylegan-encoder](https://github.com/pbaylies/stylegan-encoder)** *(创建者: [Peter Baylies](https://github.com/pbaylies), [Dmitry Nikitko](https://github.com/Puzer))*  
 
-![shortcut](media/mount_eng.png)
 
-The folder structure should be:
-    
-    .
-    ├── data                    
-    │   └── finetuned_resnet.h5 
-    ├── karras2019stylegan-ffhq-1024x1024.pkl
-    ├── shape_predictor_68_face_landmarks.dat.bz2
-    ├── vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5
-    ├── vgg16_zhang_perceptual.pkl
-    └── ...
+#### 本教程主要演示了：
 
-## Prerequisites
-* 64-bit Python 3.6 installation.
-* TensorFlow 1.10.0 with GPU support.
-* One or more high-end NVIDIA GPUs with at least 11GB of DRAM.
-* NVIDIA driver 391.35 or newer, CUDA toolkit 9.0 or newer, cuDNN 7.3.1 or newer.
+- 从本地加载训练好的 BabyGAN 模型
+- 准备父母双方图像，并获取其 latent representation
+- 用模型生成孩子的面容
+- 调整孩子的性别、年龄等参数，生成符合需求的孩子图像
 
-## Generating latent representation of your images
-You can generate latent representations of your own images using two scripts:
-1) Create folders for photos
-> mkdir raw_images aligned_images
+**调整孩子性别、年龄等特征的示意动画：**
 
-2) Extract and align faces from images
-> python align_images.py raw_images/ aligned_images/
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gpgxgq4c2ng30m00lzkjw.gif)
 
-3) Find latent representation of aligned images
-> python encode_images.py aligned_images/ generated_images/ latent_representations/
 
-## Usage BabyGAN
-- SOON
+#### 安装环境：
+- Python：3.6
+- TensorFlow：1.15
+
+#### 代码目录：
+- 准备工作
+- 准备父母图像
+- 生成孩子图像
+- 生成具有某些特征的孩子图像
+
+#### 注意事项：
+- 本教程推荐使用 GPU 运行
