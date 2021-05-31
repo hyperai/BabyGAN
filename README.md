@@ -13,7 +13,6 @@
 
 - **编码器: [stylegan-encoder](https://github.com/pbaylies/stylegan-encoder)** *(创建者: [Peter Baylies](https://github.com/pbaylies), [Dmitry Nikitko](https://github.com/Puzer))*  
 
-
 #### 本教程主要演示了：
 
 - 从本地加载训练好的 BabyGAN 模型
@@ -23,8 +22,7 @@
 
 **调整孩子性别、年龄等特征的示意动画：**
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gpgxgq4c2ng30m00lzkjw.gif)
-
+![](https://rsrc.hyper.ai/2021/05/gc73i8wb.gif)
 
 #### 安装环境：
 - Python：3.6
